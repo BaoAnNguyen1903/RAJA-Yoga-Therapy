@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAJA Yoga & Therapy - Balance Your Mind & Body</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "raja-primary": "#B94C6F",
+              "raja-secondary": "#F4A6B8",
+              "raja-accent": "#F7D7DD"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #f4a6b8 0%,
+          #f7d7dd 50%,
+          #ffffff 100%
+        );
+      }
+
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(185, 76, 111, 0.1) 0%,
+          rgba(244, 166, 184, 0.2) 30%,
+          rgba(247, 215, 221, 0.3) 70%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+      }
+
+      .premium-gradient {
+        background: linear-gradient(
+          145deg,
+          #ffffff 0%,
+          #f7d7dd 50%,
+          #f4a6b8 100%
+        );
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        backdrop-filter: blur(10px);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(185, 76, 111, 0.2),
+          0 0 0 1px rgba(185, 76, 111, 0.1);
+      }
+
+      .smooth-transition {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .testimonial-card {
+        background: linear-gradient(
+          145deg,
+          #ffffff 0%,
+          rgba(247, 215, 221, 0.3) 100%
+        );
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(185, 76, 111, 0.1);
+      }
+
+      .schedule-highlight {
+        background: linear-gradient(135deg, #b94c6f 0%, #f4a6b8 100%);
+        box-shadow: 0 8px 32px rgba(185, 76, 111, 0.3);
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .floating-animation:nth-child(2) {
+        animation-delay: -2s;
+      }
+
+      .floating-animation:nth-child(3) {
+        animation-delay: -4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-20px) rotate(1deg);
+        }
+        66% {
+          transform: translateY(-10px) rotate(-1deg);
+        }
+      }
+
+      .glow-effect {
+        box-shadow: 0 0 20px rgba(185, 76, 111, 0.3),
+          0 0 40px rgba(185, 76, 111, 0.1);
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #b94c6f 0%, #f4a6b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .premium-shadow {
+        box-shadow: 0 20px 60px rgba(185, 76, 111, 0.15),
+          0 8px 25px rgba(185, 76, 111, 0.1);
+      }
+
+      .button-glow:hover {
+        box-shadow: 0 0 30px rgba(185, 76, 111, 0.5),
+          0 0 60px rgba(185, 76, 111, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .section-divider {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #f4a6b8 50%,
+          transparent 100%
+        );
+        height: 1px;
+        width: 100px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="glass-effect sticky top-0 z-50 border-b border-white/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-full flex items-center justify-center mr-3"
+            >
+              <span class="text-white font-bold text-xl">R</span>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold font-display text-gradient">
+                RAJA
+              </h1>
+              <p class="text-sm text-gray-500 font-medium">Yoga & Therapy</p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-10">
+            <a
+              href="#home"
+              class="text-gray-600 hover:text-raja-primary smooth-transition font-medium relative group"
+            >
+              Home
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-raja-primary group-hover:w-full smooth-transition"
+              ></span>
+            </a>
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-raja-primary smooth-transition font-medium relative group"
+            >
+              About
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-raja-primary group-hover:w-full smooth-transition"
+              ></span>
+            </a>
+            <a
+              href="#services"
+              class="text-gray-600 hover:text-raja-primary smooth-transition font-medium relative group"
+            >
+              Services
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-raja-primary group-hover:w-full smooth-transition"
+              ></span>
+            </a>
+            <a
+              href="#classes"
+              class="text-gray-600 hover:text-raja-primary smooth-transition font-medium relative group"
+            >
+              Classes
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-raja-primary group-hover:w-full smooth-transition"
+              ></span>
+            </a>
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-raja-primary smooth-transition font-medium relative group"
+            >
+              Contact
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-raja-primary group-hover:w-full smooth-transition"
+              ></span>
+            </a>
+          </nav>
+
+          <!-- Book Session Button -->
+          <button
+            class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-8 py-3 rounded-full font-semibold smooth-transition premium-shadow button-glow"
+          >
+            Book a Session
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center overflow-hidden"
+    >
+      <div class="absolute inset-0 hero-gradient"></div>
+      <div class="absolute inset-0">
+        <svg
+          class="w-full h-full object-cover opacity-30"
+          viewBox="0 0 1200 800"
+          fill="none"
+        >
+          <circle
+            cx="200"
+            cy="200"
+            r="100"
+            fill="#F4A6B8"
+            opacity="0.4"
+            class="floating-animation"
+          />
+          <circle
+            cx="800"
+            cy="150"
+            r="80"
+            fill="#B94C6F"
+            opacity="0.3"
+            class="floating-animation"
+          />
+          <circle
+            cx="1000"
+            cy="400"
+            r="120"
+            fill="#F7D7DD"
+            opacity="0.5"
+            class="floating-animation"
+          />
+          <circle
+            cx="300"
+            cy="600"
+            r="90"
+            fill="#F4A6B8"
+            opacity="0.35"
+            class="floating-animation"
+          />
+          <circle
+            cx="600"
+            cy="500"
+            r="60"
+            fill="#B94C6F"
+            opacity="0.2"
+            class="floating-animation"
+          />
+        </svg>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="section-divider mb-8"></div>
+        <h1
+          class="text-6xl md:text-8xl font-bold font-display text-gradient mb-8 leading-tight"
+        >
+          RAJA
+        </h1>
+        <h2 class="text-3xl md:text-4xl font-light text-gray-700 mb-6">
+          Yoga & Therapy
+        </h2>
+        <p
+          class="text-2xl md:text-3xl font-display text-gray-600 mb-8 max-w-4xl mx-auto italic"
+        >
+          Balance Your Mind & Body
+        </p>
+        <div class="section-divider mb-12"></div>
+        <p
+          class="text-xl text-gray-500 mb-16 max-w-3xl mx-auto leading-relaxed"
+        >
+          Discover inner peace and physical wellness through our premium yoga
+          classes, meditation sessions, and therapeutic treatments designed for
+          your holistic well-being.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+        >
+          <!-- <button
+            class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-12 py-5 rounded-full text-xl font-semibold smooth-transition premium-shadow button-glow"
+          >
+            Start Your Journey
+          </button>
+          <button
+            class="glass-effect text-raja-primary px-12 py-5 rounded-full text-xl font-semibold smooth-transition border border-raja-primary/20 hover:bg-raja-primary/10"
+          >
+            Watch Our Story
+          </button> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-5xl font-bold font-display text-gradient mb-6">
+              About RAJA
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              At RAJA Yoga & Therapy, we believe in the transformative power of
+              mindful movement and healing touch. Our premium wellness center
+              offers a sanctuary where ancient wisdom meets modern therapeutic
+              practices.
+            </p>
+
+            <!-- Core Values -->
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-raja-secondary rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <svg
+                    class="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z" />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-gray-800">Balance</h3>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-raja-secondary rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <svg
+                    class="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-gray-800">Healing</h3>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-raja-secondary rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <svg
+                    class="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-gray-800">Mindfulness</h3>
+              </div>
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 bg-raja-secondary rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <svg
+                    class="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-gray-800">Strength</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="w-full h-96 bg-gradient-to-br from-raja-accent to-raja-secondary rounded-3xl flex items-center justify-center"
+            >
+              <svg
+                class="w-48 h-48 text-white opacity-80"
+                fill="currentColor"
+                viewBox="0 0 100 100"
+              >
+                <circle cx="50" cy="30" r="8" />
+                <path
+                  d="M50 40 L45 55 L40 70 L35 75 M50 40 L55 55 L60 70 L65 75 M42 50 L58 50"
+                />
+                <circle cx="35" cy="75" r="3" />
+                <circle cx="65" cy="75" r="3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <circle cx="100" cy="100" r="200" fill="#F4A6B8" />
+          <circle cx="1100" cy="700" r="150" fill="#B94C6F" />
+        </svg>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-20">
+          <div class="section-divider mb-8"></div>
+          <h2 class="text-5xl font-bold font-display text-gradient mb-6">
+            Our Services
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive wellness solutions tailored to your unique journey of
+            healing and growth.
+          </p>
+          <div class="section-divider mt-8"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Yoga Classes -->
+          <div
+            class="card-hover glass-effect border border-raja-primary/20 rounded-3xl p-10 text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-2xl flex items-center justify-center mx-auto mb-8 glow-effect group-hover:scale-110 smooth-transition"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold font-display text-gray-800 mb-6">
+              Yoga Classes
+            </h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Traditional and modern yoga practices for all levels, from gentle
+              flow to power yoga.
+            </p>
+            <button
+              class="text-raja-primary font-semibold hover:text-raja-primary smooth-transition group-hover:scale-105"
+            >
+              Learn More →
+            </button>
+          </div>
+
+          <!-- Meditation -->
+          <div
+            class="card-hover glass-effect border border-raja-primary/20 rounded-3xl p-10 text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-2xl flex items-center justify-center mx-auto mb-8 glow-effect group-hover:scale-110 smooth-transition"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path
+                  fill-rule="evenodd"
+                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold font-display text-gray-800 mb-6">
+              Meditation
+            </h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Guided meditation sessions to cultivate inner peace and mental
+              clarity.
+            </p>
+            <button
+              class="text-raja-primary font-semibold hover:text-raja-primary smooth-transition group-hover:scale-105"
+            >
+              Learn More →
+            </button>
+          </div>
+
+          <!-- Therapy -->
+          <div
+            class="card-hover glass-effect border border-raja-primary/20 rounded-3xl p-10 text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-2xl flex items-center justify-center mx-auto mb-8 glow-effect group-hover:scale-110 smooth-transition"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold font-display text-gray-800 mb-6">
+              Therapy
+            </h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Holistic therapeutic treatments combining bodywork and energy
+              healing.
+            </p>
+            <button
+              class="text-raja-primary font-semibold hover:text-raja-primary smooth-transition group-hover:scale-105"
+            >
+              Learn More →
+            </button>
+          </div>
+
+          <!-- Private Coaching -->
+          <div
+            class="card-hover glass-effect border border-raja-primary/20 rounded-3xl p-10 text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-2xl flex items-center justify-center mx-auto mb-8 glow-effect group-hover:scale-110 smooth-transition"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold font-display text-gray-800 mb-6">
+              Private Coaching
+            </h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Personalized one-on-one sessions tailored to your specific
+              wellness goals.
+            </p>
+            <button
+              class="text-raja-primary font-semibold hover:text-raja-primary smooth-transition group-hover:scale-105"
+            >
+              Learn More →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 gradient-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-bold font-display text-gradient mb-6">
+            What Our Clients Say
+          </h2>
+          <p class="text-lg text-gray-600">
+            Real stories from our wellness community
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="testimonial-card rounded-3xl p-8 text-center shadow-lg">
+            <div class="text-4xl text-raja-primary mb-4">"</div>
+            <p class="text-gray-600 mb-6 italic">
+              "RAJA Yoga has transformed my life. The peaceful environment and
+              expert guidance helped me find balance I never knew was possible."
+            </p>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <span class="text-white font-semibold">SM</span>
+            </div>
+            <h4 class="font-semibold text-gray-800">Sarah Mitchell</h4>
+            <p class="text-sm text-gray-500">Yoga Enthusiast</p>
+          </div>
+
+          <div class="testimonial-card rounded-3xl p-8 text-center shadow-lg">
+            <div class="text-4xl text-raja-primary mb-4">"</div>
+            <p class="text-gray-600 mb-6 italic">
+              "The therapy sessions here are incredible. I feel renewed and
+              energized after every visit. Highly recommend!"
+            </p>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <span class="text-white font-semibold">JD</span>
+            </div>
+            <h4 class="font-semibold text-gray-800">James Davis</h4>
+            <p class="text-sm text-gray-500">Wellness Client</p>
+          </div>
+
+          <div class="testimonial-card rounded-3xl p-8 text-center shadow-lg">
+            <div class="text-4xl text-raja-primary mb-4">"</div>
+            <p class="text-gray-600 mb-6 italic">
+              "A sanctuary of peace in the busy city. The meditation classes
+              have helped me manage stress and find inner calm."
+            </p>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <span class="text-white font-semibold">ER</span>
+            </div>
+            <h4 class="font-semibold text-gray-800">Emma Rodriguez</h4>
+            <p class="text-sm text-gray-500">Meditation Student</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="classes" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-bold font-display text-gradient mb-6">
+            Class Schedule
+          </h2>
+          <p class="text-lg text-gray-600">
+            Join us for transformative sessions throughout the week
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-3xl p-8 overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-gray-200">
+                <th class="text-left py-4 px-6 font-semibold text-gray-800">
+                  Time
+                </th>
+                <th class="text-left py-4 px-6 font-semibold text-gray-800">
+                  Monday
+                </th>
+                <th class="text-left py-4 px-6 font-semibold text-gray-800">
+                  Tuesday
+                </th>
+                <th
+                  class="text-left py-4 px-6 font-semibold text-gray-800 schedule-highlight text-white rounded-lg"
+                >
+                  Wednesday
+                </th>
+                <th class="text-left py-4 px-6 font-semibold text-gray-800">
+                  Thursday
+                </th>
+                <th class="text-left py-4 px-6 font-semibold text-gray-800">
+                  Friday
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100">
+                <td class="py-4 px-6 font-medium text-gray-600">7:00 AM</td>
+                <td class="py-4 px-6 text-gray-600">Morning Flow</td>
+                <td class="py-4 px-6 text-gray-600">Meditation</td>
+                <td class="py-4 px-6 bg-raja-accent text-gray-800 rounded-lg">
+                  Sunrise Yoga
+                </td>
+                <td class="py-4 px-6 text-gray-600">Gentle Yoga</td>
+                <td class="py-4 px-6 text-gray-600">Power Yoga</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-4 px-6 font-medium text-gray-600">12:00 PM</td>
+                <td class="py-4 px-6 text-gray-600">Lunch Flow</td>
+                <td class="py-4 px-6 text-gray-600">Therapy Session</td>
+                <td class="py-4 px-6 bg-raja-accent text-gray-800 rounded-lg">
+                  Mindful Movement
+                </td>
+                <td class="py-4 px-6 text-gray-600">Restorative</td>
+                <td class="py-4 px-6 text-gray-600">Vinyasa</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-medium text-gray-600">6:00 PM</td>
+                <td class="py-4 px-6 text-gray-600">Evening Flow</td>
+                <td class="py-4 px-6 text-gray-600">Yin Yoga</td>
+                <td class="py-4 px-6 bg-raja-accent text-gray-800 rounded-lg">
+                  Sunset Meditation
+                </td>
+                <td class="py-4 px-6 text-gray-600">Hatha Yoga</td>
+                <td class="py-4 px-6 text-gray-600">Relaxation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-32 premium-gradient relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <circle
+            cx="200"
+            cy="200"
+            r="150"
+            fill="#B94C6F"
+            class="floating-animation"
+          />
+          <circle
+            cx="1000"
+            cy="600"
+            r="100"
+            fill="#F4A6B8"
+            class="floating-animation"
+          />
+        </svg>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-20">
+          <div class="section-divider mb-8"></div>
+          <h2 class="text-5xl font-bold font-display text-gradient mb-6">
+            Get In Touch
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Ready to begin your wellness journey? We'd love to hear from you.
+          </p>
+          <div class="section-divider mt-8"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="glass-effect rounded-3xl p-12 premium-shadow">
+            <form class="space-y-8">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="relative">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
+                  />
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-r from-raja-primary/5 to-raja-secondary/5 pointer-events-none"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
+                  />
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-r from-raja-primary/5 to-raja-secondary/5 pointer-events-none"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative">
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
+                />
+                <div
+                  class="absolute inset-0 rounded-2xl bg-gradient-to-r from-raja-primary/5 to-raja-secondary/5 pointer-events-none"
+                ></div>
+              </div>
+              <div class="relative">
+                <textarea
+                  placeholder="Your Message"
+                  rows="6"
+                  class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition resize-none text-lg backdrop-blur-sm"
+                ></textarea>
+                <div
+                  class="absolute inset-0 rounded-2xl bg-gradient-to-r from-raja-primary/5 to-raja-secondary/5 pointer-events-none"
+                ></div>
+              </div>
+              <div class="text-center pt-4">
+                <button
+                  type="submit"
+                  class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-12 py-5 rounded-full text-xl font-semibold smooth-transition premium-shadow button-glow"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-2 border-raja-secondary py-12">
+      <div class="absolute inset-0 opacity-5">
+            <div class="floating-element absolute top-10 left-10 w-32 h-32 morphing-blob bg-raja-primary"></div>
+            <div class="floating-element absolute bottom-10 right-10 w-24 h-24 morphing-blob bg-raja-secondary"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-raja-primary to-raja-secondary rounded-full flex items-center justify-center mr-3">
+                        <span class="text-white font-bold text-2xl font-serif">R</span>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold font-serif gradient-text">RAJA</h3>
+                        <p class="text-gray-600">Yoga & Therapy</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Your sanctuary for transformation, healing, and spiritual growth. Where every breath is a step towards your highest self.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-black font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-600 hover:text-raja-secondary transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-600 hover:text-raja-secondary transition-colors">Services</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-raja-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-black font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-raja-secondary transition-colors">Yoga Classes</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-raja-secondary transition-colors">Meditation</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-raja-secondary transition-colors">Therapy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-black font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>📍 02 Tiên Sơn 11, Đà Nẵng</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>✉️ hello@rajayoga.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-black font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 liquid-shape bg-gradient-to-br from-raja-primary to-raja-secondary flex items-center justify-center text-white hover:scale-110 transition-transform">
+                            <span class="text-sm">IG</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 liquid-shape bg-gradient-to-br from-raja-secondary to-raja-accent flex items-center justify-center text-white hover:scale-110 transition-transform">
+                            <span class="text-sm">FB</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 liquid-shape bg-gradient-to-br from-raja-accent to-raja-primary flex items-center justify-center text-white hover:scale-110 transition-transform">
+                            <span class="text-sm">YT</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2024 RAJA Yoga & Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        });
+      });
+
+      // Form submission handler
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Thank you for your message! We'll get back to you soon.");
+        this.reset();
+      });
+
+      // Button click handlers
+      document.querySelectorAll("button").forEach((button) => {
+        if (button.type !== "submit") {
+          button.addEventListener("click", function () {
+            if (
+              this.textContent.includes("Book a Session") ||
+              this.textContent.includes("Start Your Journey")
+            ) {
+              alert(
+                "Booking system coming soon! Please contact us directly for now."
+              );
+            } else if (this.textContent.includes("Learn More")) {
+              alert("More details about this service coming soon!");
+            }
+          });
+        }
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'974c0de9c4620ed0',t:'MTc1NjEzNTAyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
