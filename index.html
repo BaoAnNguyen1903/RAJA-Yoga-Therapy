@@ -18,6 +18,55 @@
         }
       };
     </script>
+    <script>
+      const translations = {
+        en: {
+          nav: ["Home", "About", "Services", "Classes", "Contact"],
+          hero: {
+            title: "Balance Your Mind & Body",
+            desc: "Discover inner peace and physical wellness through our premium yoga classes, meditation sessions, and therapeutic treatments designed for your holistic well-being."
+          },
+          about: {
+            
+          }
+        },
+        vi: {
+          nav: ["Trang Chủ", "Giới Thiệu", "Dịch Vụ", "Lớp Học", "Liên Hệ"],
+          hero: {
+            title: "Cân Bằng Tâm Trí & Cơ Thể",
+            desc: "Khám phá sự bình an nội tâm và sức khỏe thể chất thông qua các lớp yoga cao cấp, thiền định và liệu pháp trị liệu toàn diện cho sức khỏe của bạn."
+          }
+        }
+      };
+
+      let currentLang = "en";
+
+      window.onload = function () {
+        const toggleBtn = document.getElementById("lang-toggle");
+        toggleBtn.addEventListener("click", () => {
+          currentLang = currentLang === "en" ? "vi" : "en";
+          updateLanguage();
+        });
+      };
+
+      function updateLanguage() {
+        // cập nhật nút
+        document.getElementById("lang-toggle").innerText =
+          currentLang.toUpperCase();
+
+        // navigation
+        document.querySelectorAll("nav a").forEach((el, i) => {
+          el.innerText = translations[currentLang].nav[i];
+        });
+
+        // hero
+        document.querySelector("#home p.text-2xl").innerText =
+          translations[currentLang].hero.title;
+        document.querySelector("#home p.text-xl").innerText =
+          translations[currentLang].hero.desc;
+      }
+    </script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
@@ -225,9 +274,10 @@
 
           <!-- Book Session Button -->
           <button
-            class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-8 py-3 rounded-full font-semibold smooth-transition premium-shadow button-glow"
+            id="lang-toggle"
+            class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-6 py-2 rounded-full font-semibold smooth-transition premium-shadow button-glow"
           >
-            Book a Session
+            EN
           </button>
         </div>
       </div>
@@ -924,7 +974,7 @@
 
         <div class="border-t border-gray-200 mt-8 pt-8 text-center">
           <p class="text-gray-600">
-            &copy; 2024 RAJA Yoga & Therapy. All rights reserved.
+            &copy; 2025 RAJA Yoga & Therapy. All rights reserved.
           </p>
         </div>
       </div>
