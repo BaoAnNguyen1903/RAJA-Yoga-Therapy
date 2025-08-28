@@ -6,6 +6,8 @@
     <title>RAJA Yoga & Therapy - Balance Your Mind & Body</title>
     <link rel="icon" type="image/png" href="images/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -1002,7 +1004,8 @@
           </p>
         </div>
 
-        <div class="bg-gray-50 rounded-3xl p-8 overflow-x-auto">
+        <!-- Desktop Schedule Table (Hidden on mobile) -->
+        <div class="hidden lg:block bg-gray-50 rounded-3xl p-8">
           <table class="w-full">
             <thead>
               <tr class="border-b border-gray-200">
@@ -1062,6 +1065,206 @@
             </tbody>
           </table>
         </div>
+
+        <!-- Tablet Schedule (Hidden on mobile and desktop) -->
+        <div class="hidden md:block lg:hidden bg-gray-50 rounded-3xl p-6">
+          <div class="grid grid-cols-2 gap-6">
+            <!-- Morning Classes -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Morning (7:00 AM)</h3>
+              <div class="space-y-3">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Monday</div>
+                  <div class="text-gray-800">Morning Flow</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Tuesday</div>
+                  <div class="text-gray-800">Meditation</div>
+                </div>
+                <div class="bg-raja-accent p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Wednesday</div>
+                  <div class="text-gray-800 font-semibold">Sunrise Yoga</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Thursday</div>
+                  <div class="text-gray-800">Gentle Yoga</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Friday</div>
+                  <div class="text-gray-800">Power Yoga</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Afternoon Classes -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Afternoon (12:00 PM)</h3>
+              <div class="space-y-3">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Monday</div>
+                  <div class="text-gray-800">Lunch Flow</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Tuesday</div>
+                  <div class="text-gray-800">Therapy Session</div>
+                </div>
+                <div class="bg-raja-accent p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Wednesday</div>
+                  <div class="text-gray-800 font-semibold">Mindful Movement</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Thursday</div>
+                  <div class="text-gray-800">Restorative</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                  <div class="font-medium text-gray-600 mb-2">Friday</div>
+                  <div class="text-gray-800">Vinyasa</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evening Classes -->
+            <div class="col-span-2 space-y-4">
+              <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Evening (6:00 PM)</h3>
+              <div class="grid grid-cols-5 gap-3">
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium text-gray-600 mb-2 text-sm">Mon</div>
+                  <div class="text-gray-800 text-sm">Evening Flow</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium text-gray-600 mb-2 text-sm">Tue</div>
+                  <div class="text-gray-800 text-sm">Yin Yoga</div>
+                </div>
+                <div class="bg-raja-accent p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium text-gray-600 mb-2 text-sm">Wed</div>
+                  <div class="text-gray-800 text-sm font-semibold">Sunset Meditation</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium text-gray-600 mb-2 text-sm">Thu</div>
+                  <div class="text-gray-800 text-sm">Hatha Yoga</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium text-gray-600 mb-2 text-sm">Fri</div>
+                  <div class="text-gray-800 text-sm">Relaxation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Schedule (Hidden on tablet and desktop) -->
+        <div class="md:hidden bg-gray-50 rounded-3xl p-4 space-y-6">
+          <!-- Morning Classes -->
+          <div class="space-y-3">
+            <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Morning (7:00 AM)</h3>
+            <div class="space-y-3">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Monday</span>
+                  <span class="text-gray-800">Morning Flow</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Tuesday</span>
+                  <span class="text-gray-800">Meditation</span>
+                </div>
+              </div>
+              <div class="bg-raja-accent p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Wednesday</span>
+                  <span class="text-gray-800 font-semibold">Sunrise Yoga</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Thursday</span>
+                  <span class="text-gray-800">Gentle Yoga</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Friday</span>
+                  <span class="text-gray-800">Power Yoga</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Afternoon Classes -->
+          <div class="space-y-3">
+            <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Afternoon (12:00 PM)</h3>
+            <div class="space-y-3">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Monday</span>
+                  <span class="text-gray-800">Lunch Flow</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Tuesday</span>
+                  <span class="text-gray-800">Therapy Session</span>
+                </div>
+              </div>
+              <div class="bg-raja-accent p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Wednesday</span>
+                  <span class="text-gray-800 font-semibold">Mindful Movement</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Thursday</span>
+                  <span class="text-gray-800">Restorative</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Friday</span>
+                  <span class="text-gray-800">Vinyasa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evening Classes -->
+          <div class="space-y-3">
+            <h3 class="text-lg font-semibold text-gray-800 text-center py-2 bg-raja-secondary/20 rounded-lg">Evening (6:00 PM)</h3>
+            <div class="space-y-3">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Monday</span>
+                  <span class="text-gray-800">Evening Flow</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Tuesday</span>
+                  <span class="text-gray-800">Yin Yoga</span>
+                </div>
+              </div>
+              <div class="bg-raja-accent p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Wednesday</span>
+                  <span class="text-gray-800 font-semibold">Sunset Meditation</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Thursday</span>
+                  <span class="text-gray-800">Hatha Yoga</span>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                  <span class="font-medium text-gray-600">Friday</span>
+                  <span class="text-gray-800">Relaxation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1103,12 +1306,14 @@
 
         <div class="max-w-3xl mx-auto">
           <div class="glass-effect rounded-3xl p-12 premium-shadow">
-            <form class="space-y-8">
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-8">
               <div class="grid md:grid-cols-2 gap-8">
                 <div class="relative">
                   <input
                     type="text"
                     id="contact-name"
+                    name="name"
+                    required
                     placeholder="Your Name"
                     class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
                   />
@@ -1120,6 +1325,8 @@
                   <input
                     type="email"
                     id="contact-email"
+                    name="email"
+                    required
                     placeholder="Your Email"
                     class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
                   />
@@ -1132,6 +1339,8 @@
                 <input
                   type="text"
                   id="contact-subject"
+                  name="subject"
+                  required
                   placeholder="Subject"
                   class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition text-lg backdrop-blur-sm"
                 />
@@ -1142,6 +1351,8 @@
               <div class="relative">
                 <textarea
                   id="contact-message"
+                  name="message"
+                  required
                   placeholder="Your Message"
                   rows="6"
                   class="w-full px-8 py-5 rounded-2xl bg-white/80 border-2 border-raja-secondary/30 focus:border-raja-primary focus:bg-white outline-none smooth-transition resize-none text-lg backdrop-blur-sm"
@@ -1150,10 +1361,40 @@
                   class="absolute inset-0 rounded-2xl bg-gradient-to-r from-raja-primary/5 to-raja-secondary/5 pointer-events-none"
                 ></div>
               </div>
+              
+              <!-- Loading State -->
+              <div id="loading-state" class="hidden text-center">
+                <div class="inline-flex items-center space-x-2">
+                  <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-raja-primary"></div>
+                  <span class="text-gray-600">Sending message...</span>
+                </div>
+              </div>
+              
+              <!-- Success Message -->
+              <div id="success-message" class="hidden text-center p-4 bg-green-100 border border-green-300 rounded-lg">
+                <div class="flex items-center justify-center space-x-2">
+                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-green-800 font-medium">Message sent successfully! We'll get back to you soon.</span>
+                </div>
+              </div>
+              
+              <!-- Error Message -->
+              <div id="error-message" class="hidden text-center p-4 bg-red-100 border border-red-300 rounded-lg">
+                <div class="flex items-center justify-center space-x-2">
+                  <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span class="error-text text-red-800 font-medium">Failed to send message. Please try again.</span>
+                </div>
+              </div>
+              
               <div class="text-center pt-4">
                 <button
                   type="submit"
-                  class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-12 py-5 rounded-full text-xl font-semibold smooth-transition premium-shadow button-glow"
+                  id="submit-btn"
+                  class="bg-gradient-to-r from-raja-primary to-raja-secondary text-white px-12 py-5 rounded-full text-xl font-semibold smooth-transition premium-shadow button-glow hover:from-raja-primary/90 hover:to-raja-secondary/90"
                 >
                   Send Message
                 </button>
@@ -1287,17 +1528,14 @@
             </ul>
           </div>
           <div>
-            <div class="flex space-x-4">
-              <div class="map-container">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26563.328730791443!2d108.18764930107265!3d16.028807645671606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219eec9a86755%3A0x844fff57e69cc50!2zMDIgVGnDqm4gU8ahbiAxMSwgSG_DoCBDxrDhu51uZyBOYW0sIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1MDIxOCwgVmnhu4d0IE5hbQ!5e1!3m2!1svi!2s!4v1756140344179!5m2!1svi!2s"
-                  width="250px"
-                  height="130px"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>
+            <div class="map-container w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26563.328730791443!2d108.18764930107265!3d16.028807645671606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219eec9a86755%3A0x844fff57e69cc50!2zMDIgVGnDqm4gU8ahbiAxMSwgSG_DoCBDxrDhu51uZyBOYW0sIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1MDIxOCwgVmnhu4d0IE5hbQ!5e1!3m2!1svi!2s!4v1756140344179!5m2!1svi!2s"
+                class="w-full h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 rounded-lg shadow-lg"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -1311,6 +1549,39 @@
     </footer>
 
     <script>
+      /*
+      ========================================
+      CONTACT FORM SETUP INSTRUCTIONS
+      ========================================
+      
+      Form đã được cấu hình để sử dụng config.js!
+      
+      Để làm cho form hoạt động:
+      
+      OPTION 1 (KHUYẾN NGHỊ - MIỄN PHÍ):
+      1. Truy cập https://formspree.io/
+      2. Đăng ký tài khoản miễn phí
+      3. Tạo form mới
+      4. Cập nhật FORMSPREE_FORM_ID trong file config.js
+      5. Form sẽ hoạt động ngay lập tức!
+      
+      OPTION 2 (EmailJS - Nhiều tính năng hơn):
+      1. Truy cập https://www.emailjs.com/
+      2. Đăng ký và tạo tài khoản
+      3. Thiết lập email service (Gmail, Outlook, etc.)
+      4. Tạo email template
+      5. Cập nhật các thông số trong config.js
+      6. Bỏ comment code EmailJS trong form submission handler
+      
+      Xem README.md để biết thêm chi tiết!
+      ========================================
+      */
+      
+      // Initialize EmailJS (only needed if using Option 2)
+      (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+      })();
+
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -1325,12 +1596,95 @@
         });
       });
 
-      // Form submission handler
-      document.querySelector("form").addEventListener("submit", function (e) {
+      // Contact form submission handler
+      document.getElementById("contact-form").addEventListener("submit", async function (e) {
         e.preventDefault();
-        alert("Thank you for your message! We'll get back to you soon.");
-        this.reset();
+        
+        // Get form data
+        const formData = {
+          name: document.getElementById("contact-name").value,
+          email: document.getElementById("contact-email").value,
+          subject: document.getElementById("contact-subject").value,
+          message: document.getElementById("contact-message").value
+        };
+
+        // Show loading state
+        showLoadingState();
+
+        try {
+          // Option 1: Send using Formspree (recommended for immediate use)
+          const response = await fetch("https://formspree.io/f/" + window.FORMSPREE_FORM_ID, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+          });
+          
+          if (response.ok) {
+            showSuccessMessage();
+            document.getElementById("contact-form").reset();
+          } else {
+            throw new Error("Failed to send message");
+          }
+        } catch (error) {
+          console.log("FAILED...", error);
+          showErrorMessage("Failed to send message. Please try again.");
+        }
+
+        // Option 2: Send using EmailJS (uncomment if you have EmailJS setup)
+        /*
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+          .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+            showSuccessMessage();
+            document.getElementById("contact-form").reset();
+          }, function(error) {
+            console.log("FAILED...", error);
+            showErrorMessage(error.text || "Failed to send message. Please try again.");
+          });
+        */
       });
+
+      // Show loading state
+      function showLoadingState() {
+        document.getElementById("loading-state").classList.remove("hidden");
+        document.getElementById("success-message").classList.add("hidden");
+        document.getElementById("error-message").classList.add("hidden");
+        document.getElementById("submit-btn").disabled = true;
+        document.getElementById("submit-btn").classList.add("opacity-50", "cursor-not-allowed");
+      }
+
+      // Show success message
+      function showSuccessMessage() {
+        document.getElementById("loading-state").classList.add("hidden");
+        document.getElementById("success-message").classList.remove("hidden");
+        document.getElementById("error-message").classList.add("hidden");
+        document.getElementById("submit-btn").disabled = false;
+        document.getElementById("submit-btn").classList.remove("opacity-50", "cursor-not-allowed");
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          document.getElementById("success-message").classList.add("hidden");
+        }, 5000);
+      }
+
+      // Show error message
+      function showErrorMessage(message) {
+        document.getElementById("loading-state").classList.add("hidden");
+        document.getElementById("success-message").classList.add("hidden");
+        document.getElementById("error-message").classList.remove("hidden");
+        document.getElementById("submit-btn").disabled = false;
+        document.getElementById("submit-btn").classList.remove("opacity-50", "cursor-not-allowed");
+        
+        // Update error message text
+        document.querySelector(".error-text").textContent = message;
+        
+        // Hide error message after 5 seconds
+        setTimeout(() => {
+          document.getElementById("error-message").classList.add("hidden");
+        }, 5000);
+      }
 
       // Button click handlers
       document.querySelectorAll("button").forEach((button) => {
